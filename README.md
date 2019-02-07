@@ -1,24 +1,17 @@
-# README
+# Rakuten Search Bot
+LINEで楽天市場の商品を検索できるBotです。
+登録: https://line.me/R/ti/p/%40ixm4916y
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 使用方法
+上記URLから登録し、キーワードを送信してください。
+入力したキーワードで楽天市場から検索した結果を10件分返します。
+スペースで区切り結果を絞り込むことが可能です。
 
-Things you may want to cover:
+# 利用したもの
 
-* Ruby version
+*  LINE Messaging API
 
-* System dependencies
+*  楽天API
 
-* Configuration
+*  Heroku
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
