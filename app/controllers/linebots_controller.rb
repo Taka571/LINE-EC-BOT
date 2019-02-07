@@ -41,9 +41,8 @@ class LinebotsController < ApplicationController
       c.application_id = ENV['RAKUTEN_APPID']
       c.affiliate_id = ENV['RAKUTEN_AFID']
     end
-    # 楽天の商品検索APIで画像がある商品の中で、入力値で検索して上から3件を取得する
-    # 商品検索+ランキングでの取得はできないため標準の並び順で上から3件取得する
-    res = RakutenWebService::Ichiba::Item.search(keyword: input, hits: 3, imageFlag: 1)
+    # 楽天の商品検索APIで画像がある商品の中で、入力値で検索して上から10件を取得する
+    res = RakutenWebService::Ichiba::Item.search(keyword: input, hits: 10, imageFlag: 1)
     items = []
     # 取得したデータを使いやすいように配列に格納し直す
     items = res.map{|item| item}
@@ -60,7 +59,14 @@ class LinebotsController < ApplicationController
         "contents": [
           make_part(items[0]),
           make_part(items[1]),
-          make_part(items[2])
+          make_part(items[2]),
+          make_part(items[3]),
+          make_part(items[4]),
+          make_part(items[5]),
+          make_part(items[6]),
+          make_part(items[7]),
+          make_part(items[8]),
+          make_part(items[9])
         ]
       }
     }
@@ -117,7 +123,7 @@ class LinebotsController < ApplicationController
             "style": "primary",
             "action": {
               "type": "uri",
-              "label": "Amazon商品ページへ",
+              "label": "楽天商品ページへ",
               "uri": url
             }
           }
